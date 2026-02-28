@@ -6,27 +6,19 @@ function About() {
       <h2>About Me</h2>
       <div className="section-content">
         <p>
-          I am a data-driven professional specializing in workforce and career education analytics. I develop
-          dashboards, automate reporting workflows, and collaborate with stakeholders across colleges to
-          improve student outcomes and support CTE initiatives.
+          I am a data-driven professional specializing in workforce and Career Technical Education (CTE) analytics, with 5 years of experience in data analysis. I hold a Master of Public Policy from UC San Diego and earned a B.S. in Applied Mathematics and a B.A. in Economics–Public Policy, which provide a strong quantitative and policy foundation.
         </p>
+
         <p>
-          My background includes extensive use of Python for data wrangling, Power BI for visualization, and
-          Stata/R for statistical analysis. I also train researchers and institutional partners on data
-          tools and interpretation.
+          I integrate education and labor market datasets to build analytical tools that inform strategy, improve reporting systems, and support evidence-based decision-making. My work centers on transforming complex data into clear, actionable insights tailored to diverse audiences. My research interests focus on education-to-workforce transitions and reducing inequality in postsecondary outcomes.
         </p>
         <h3>Key Skills</h3>
         <ul className="skills-list">
           <li>Data Visualization (Power BI)</li>
-          <li>Statistical Analysis (Stata, R, Python, SQL)</li>
-          <li>GIS & Spatial Data (QGIS, ArcGIS)</li>
-          <li>Python Automation & Scripting</li>
-          <li>Workforce / CTE Data Integration</li>
+          <li>Programming Tools (Stata, R, Python, SQL)</li>
+          <li>GIS & Spatial Data Analysis(QGIS, ArcGIS)</li>
+          <li>Labor Market & Career Technical Education (CTE) Research</li>
         </ul>
-        <p>
-          Outside of work I enjoy tackling data challenges, learning new tools, and contributing to research
-          projects that have real-world impact.
-        </p>
       </div>
     </div>
   )

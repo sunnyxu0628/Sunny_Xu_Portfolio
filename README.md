@@ -50,7 +50,7 @@ npm run dev
 Edit [src/components/Header.jsx](src/components/Header.jsx) to update:
 - Your name and title
 - Biography
-- Profile image URL (you can place the photo you attached in `src/assets/profile.jpg` or use an external URL)
+- Profile image URL (use the photo you attached here by saving it as `src/assets/profile.jpg` or provide an external URL)
 - Social media links
 
 ### Add Your Content
