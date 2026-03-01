@@ -59,17 +59,8 @@
 /* Timeline */
 .timeline {
   position: relative;
-  padding-left: 2rem;
-}
-
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: #ddd;
+  padding-left: 0; /* no line, start at edge */
+  padding-right: 1rem;
 }
 
 .timeline-item {
@@ -78,59 +69,164 @@
   padding-bottom: 2rem;
 }
 
-.timeline-marker {
-  position: absolute;
-  left: -12px;
-  top: 5px;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: #0066cc;
-  border: 3px solid white;
-  box-shadow: 0 0 0 2px #0066cc;
+/* Card-style timeline entries (no circular markers) */
+.timeline-content {
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  border-left: 6px solid #e6f0ff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+  background: #fbfdff;
+  border-left-color: #cfe3ff;
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+  background: #ffffff;
+  border-left-color: #e6f0ff;
 }
 
 .timeline-content h3 {
-  margin-top: 0;
+  margin: 0;
   color: #222;
+  font-size: 1.05rem;
+  font-weight: 700;
 }
 
-.company {
-  font-size: 1.1rem;
-  color: #0066cc;
-  font-weight: 600;
-  margin: 0.25rem 0;
-}
-
-.meta {
-  color: #999;
-  font-size: 0.9rem;
+.header-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
   margin-bottom: 0.5rem;
 }
 
+.job-header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.2rem;
+}
+
+/* first row: title left, duration right */
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+/* second row: company left, location right */
+.header-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.job-header h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+
+.company {
+  margin: 0;
+  font-size: 1rem;
+  color: #0066cc;
+  font-weight: 600;
+}
+
+.meta {
+  margin: 0.25rem 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* keep items on right edge */
+}
+
+.meta .duration,
+.meta .location {
+  margin: 0;
+  color: #999;
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+.meta .location {
+  margin-top: 0.25rem;
+}
+
+.toggle-btn {
+  font-size: 0.95rem;
+  font-weight: 500;
+  background: none;
+  border: none;
+  color: #0066cc;
+  cursor: pointer;
+  padding: 0;
+  margin-top: 0.5rem;
+  display: block;
+  margin-left: auto;
+  text-decoration: underline;
+}
+
+.toggle-btn:hover {
+  color: #0052a3;
+}
+
+.toggle-btn::after {
+  content: ' ▾';
+  transition: transform 0.2s ease;
+}
+
+.toggle-btn.expanded::after {
+  transform: rotate(180deg);
+}
 .description {
   color: #666;
-  margin-bottom: 1rem;
+  margin: 0.5rem 0 1rem 0;
 }
 
 .achievements {
-  list-style: none;
+  /* use native list style so wrapped lines align cleanly */
+  list-style-type: disc;
+  margin: 0.75rem 0 1rem 2rem;
   padding-left: 0;
-  margin: 1rem 0;
 }
 
 .achievements li {
-  padding: 0.5rem 0 0.5rem 1.5rem;
-  position: relative;
+  margin-bottom: 0.5rem;
   color: #555;
+  line-height: 1.4;
 }
 
-.achievements li::before {
-  content: '✓';
-  position: absolute;
-  left: 0;
+.header-row .job-title-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.timeline-item:hover .timeline-content {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 102, 204, 0.08);
+  border-left-color: #0066cc;
+}
+
+
+.toggle-btn {
+  background: none;
+  border: none;
   color: #0066cc;
-  font-weight: bold;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0.25rem 0;
+  margin-top: 0.5rem;
+  text-decoration: underline;
+}
+
+.toggle-btn:hover {
+  color: #0052a3;
 }
 
 /* Education */
@@ -429,4 +525,27 @@
     margin-top: 0.5rem;
     margin-left: 0;
   }
+}
+
+/* Desktop: keep single-column timeline but make it compact and scrollable to view more entries */
+@media (min-width: 900px) {
+  .timeline {
+    padding-left: 2.25rem; /* keep the vertical line visible */
+    max-height: 65vh; /* limits vertical length so users can scan without long page scrolling */
+    overflow: auto;
+  }
+
+  .timeline-item {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .timeline-marker { display: none; }
+
+  .timeline-content {
+    padding: 1rem;
+  }
+
+  .company { font-size: 1rem; }
+  .meta { font-size: 0.85rem; font-style: italic; }
 }

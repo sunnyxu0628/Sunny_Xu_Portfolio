@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import './SectionStyles.css'
 
 function WorkHistory() {
@@ -6,6 +7,7 @@ function WorkHistory() {
       id: 1,
       title: 'Workforce Systems Manager',
       company: 'San Diego Community College District (SDCCD)',
+      companyUrl: 'https://www.sdccd.edu/',
       duration: 'July 2025 – Present',
       location: 'San Diego, CA',
       description:
@@ -21,6 +23,7 @@ function WorkHistory() {
       id: 2,
       title: 'Professional Expert 13',
       company: 'San Diego Community College District (SDCCD)',
+      companyUrl: 'https://www.sdccd.edu/',
       duration: 'September 2024 – July 2025',
       location: 'San Diego, CA',
       description:
@@ -37,6 +40,7 @@ function WorkHistory() {
       id: 3,
       title: 'Career and Technical Education (CTE) Research Expert',
       company: 'San Diego & Imperial Center of Excellence (COE)',
+      companyUrl: 'https://coeccc.net/',
       duration: 'October 2023 – June 2025',
       location: 'San Diego, CA',
       description:
@@ -51,6 +55,7 @@ function WorkHistory() {
       id: 4,
       title: 'Contract Researcher',
       company: 'San Diego & Imperial Center of Excellence (COE)',
+      companyUrl: 'https://coeccc.net/',
       duration: 'April 2023 – June 2023',
       location: 'San Diego, CA',
       description: 'Conducted labor market research and prepared data for regional databases.',
@@ -63,6 +68,7 @@ function WorkHistory() {
       id: 5,
       title: 'Graduate Research Assistant / Staff Research Associate',
       company: 'UC San Diego, School of Global Policy and Strategy',
+      companyUrl: 'https://gps.ucsd.edu/',
       duration: 'April 2023 – January 2024',
       location: 'San Diego, CA',
       description: 'Managed and automated data collection and transformation projects.',
@@ -72,9 +78,35 @@ function WorkHistory() {
       ],
     },
     {
+      id: 7,
+      title: 'Quantitative Methods II (Regression Analysis in R) Tutor',
+      company: 'UC San Diego, School of Global Policy and Strategy',
+      companyUrl: 'https://gps.ucsd.edu/',
+      duration: 'January 2023 – March 2023',
+      location: 'San Diego, CA',
+      description:
+        'Provided tutoring in statistical and policy analysis using R to groups of 30 students with no prior data experience',
+      achievements: [],
+    },
+    {
+      id: 8,
+      title: 'GIS and Spatial Data Analysis Teaching Assistant',
+      company: 'UC San Diego, School of Global Policy and Strategy',
+      companyUrl: 'https://gps.ucsd.edu/',
+      duration: 'September 2022 – December 2022',
+      location: 'San Diego, CA',
+      description:
+        'Supported the professor in teaching graduate students and led weekly data lab sessions.',
+      achievements: [
+        'Supported teaching 100 graduate students in QGIS, R, and spatial data analysis',
+        'Led weekly data lab sessions for 20 students, providing research support and guidance on data analysis and data storytelling',
+      ],
+    },
+    {
       id: 6,
       title: 'Data Analysis Intern, Education Policy Team',
       company: 'American Enterprise Institute (AEI)',
+      companyUrl: 'https://www.aei.org/policy-areas/education/',
       duration: 'June 2022 – August 2022',
       location: 'Washington, DC',
       description: 'Support data analysis and research for education policy projects.',
@@ -85,26 +117,67 @@ function WorkHistory() {
     },
   ]
 
+  const [expandedIds, setExpandedIds] = useState([])
+
+  const toggleExpand = (id) => {
+    setExpandedIds((prev) =>
+      prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]
+    )
+  }
+
   return (
     <div className="section">
-      <h2>Work History</h2>
+      <h2>Work Experience</h2>
       <div className="timeline">
-        {workExperience.map((job) => (
-          <div key={job.id} className="timeline-item">
-            <div className="timeline-marker"></div>
-            <div className="timeline-content">
-              <h3>{job.title}</h3>
-              <p className="company">{job.company}</p>
-              <p className="meta">{job.duration} • {job.location}</p>
-              <p className="description">{job.description}</p>
-              <ul className="achievements">
-                {job.achievements.map((achievement, idx) => (
-                  <li key={idx}>{achievement}</li>
-                ))}
-              </ul>
+        {workExperience.map((job) => {
+          const isExpanded = expandedIds.includes(job.id)
+          return (
+            <div key={job.id} className="timeline-item">
+                <div className="timeline-content">
+                  <div className="header-row">
+                    <div className="job-header">
+                      <div className="header-top">
+                        <h3>{job.title}</h3>
+                        <p className="duration">{job.duration}</p>
+                      </div>
+                      <div className="header-bottom">
+                        <p className="company">
+                          {job.companyUrl ? (
+                            <a href={job.companyUrl} target="_blank" rel="noopener noreferrer">
+                              {job.company}
+                            </a>
+                          ) : (
+                            job.company
+                          )}
+                        </p>
+                        <p className="location">{job.location}</p>
+                      </div>
+                    </div>
+                  </div>
+                {isExpanded && (
+                  <>
+                    <p className="description">{job.description}</p>
+                    {job.achievements.length > 0 && (
+                      <ul className="achievements">
+                        {job.achievements.map((achievement, idx) => (
+                          <li key={idx}>{achievement}</li>
+                        ))}
+                      </ul>
+                    )}
+                  </>
+                )}
+                <div style={{ textAlign: 'right' }}>
+                  <button
+                    className={isExpanded ? 'toggle-btn expanded' : 'toggle-btn'}
+                    onClick={() => toggleExpand(job.id)}
+                  >
+                    {isExpanded ? 'Show less' : 'Show more'}
+                  </button>
+                </div>
+              </div>
             </div>
-          </div>
-        ))}
+          )
+        })}
       </div>
     </div>
   )
