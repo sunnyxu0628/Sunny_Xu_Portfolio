@@ -1,6 +1,14 @@
 import { useState } from 'react'
 import './SectionStyles.css'
 
+// highlight numeric values only (reduces over-highlighting)
+const highlightText = (text) => {
+  if (!text || typeof text !== 'string') return text
+  const pattern = /(\d[\d,\.\-%+]*)/
+  const parts = text.split(pattern)
+  return parts.map((p, i) => (pattern.test(p) ? <span key={i} className="highlight">{p}</span> : p))
+}
+
 function WorkHistory() {
   const workExperience = [
     {
@@ -156,11 +164,11 @@ function WorkHistory() {
                   </div>
                 {isExpanded && (
                   <>
-                    <p className="description">{job.description}</p>
+                    <p className="description">{highlightText(job.description)}</p>
                     {job.achievements.length > 0 && (
                       <ul className="achievements">
                         {job.achievements.map((achievement, idx) => (
-                          <li key={idx}>{achievement}</li>
+                          <li key={idx}>{highlightText(achievement)}</li>
                         ))}
                       </ul>
                     )}

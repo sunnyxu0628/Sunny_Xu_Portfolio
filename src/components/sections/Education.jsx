@@ -6,9 +6,10 @@ function Education() {
       id: 1,
       degree: 'Master of Public Policy',
       school: 'UC San Diego, School of Global Policy and Strategy',
-      year: '2024',
+      year: '2023',
       location: 'San Diego, CA',
       highlights: [
+        "Dean's Fellow",
         'Coursework: Big Data Analytics, Applied Data Analysis and Statistical Decision Making, Data Science Approaches to Spatial Analysis, Education Policy Around the World',
       ],
     },
