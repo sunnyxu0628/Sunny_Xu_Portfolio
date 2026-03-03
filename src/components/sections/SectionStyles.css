@@ -28,7 +28,7 @@
 
 .section h3 {
   font-size: 1.25rem;
-  margin-top: 1.5rem;
+  margin-top: 0px;
   margin-bottom: 0.75rem;
   color: #333;
 }
@@ -564,7 +564,7 @@
 .presentations-list {
   display: grid;
   gap: 1.5rem;
-  margin-top: 1.5rem;
+  margin-top: 0rem;
 }
 
 .presentation-item {
@@ -614,6 +614,17 @@
   color: #0066cc;
   font-weight: 600;
   margin: 0.5rem 0;
+}
+
+.event-link {
+  color: #0066cc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.event-link:hover {
+  color: #0052a3;
+  text-decoration: underline;
 }
 
 .presentation-item .description {

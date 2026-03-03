@@ -1,4 +1,5 @@
 import './Header.css'
+import resumePDF from '../assets/SunnyXu_Resume.pdf'
 
 function Header() {
   return (
@@ -21,6 +22,11 @@ function Header() {
             <p className="bio">
               Data Storyteller • Data Analysis & Research • Education
             </p>
+            <div className="resume-link-section">
+              <a href={resumePDF} download className="resume-button">
+                Download Resume
+              </a>
+            </div>
             <div className="social-links">
               <a href="mailto:sunnyxu0628@outlook.com" title="Email">
                 <svg className="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
