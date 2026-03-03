@@ -664,14 +664,14 @@
 /* Desktop: keep single-column timeline but make it compact and scrollable to view more entries */
 @media (min-width: 900px) {
   .timeline {
-    padding-left: 2.25rem; /* keep the vertical line visible */
+    padding-left: 0rem; /* keep the vertical line visible */
     max-height: 65vh; /* limits vertical length so users can scan without long page scrolling */
     overflow: auto;
   }
 
   .timeline-item {
     margin-bottom: 1rem;
-    padding-bottom: 1rem;
+    padding-bottom: 0px;
   }
 
   .timeline-marker { display: none; }
