@@ -52,31 +52,10 @@
   max-width: 600px;
 }
 
-.resume-link-section {
-  margin-bottom: 1.5rem;
-}
-
-.resume-button {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background-color: #0066cc;
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  border: 2px solid #0066cc;
-}
-
-.resume-button:hover {
-  background-color: #0052a3;
-  border-color: #0052a3;
-  box-shadow: 0 4px 12px rgba(0, 102, 204, 0.2);
-}
-
 .social-links {
   display: flex;
   gap: 1rem;
+  align-items: center;
 }
 
 .social-links a {
@@ -92,6 +71,40 @@
 }
 
 .social-links a:hover {
+  background-color: #0066cc;
+  color: white;
+}
+
+.resume-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.resume-link:hover {
+  background-color: #0066cc;
+  color: white;
+}
+
+.resume-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.resume-link:hover {
   background-color: #0066cc;
   color: white;
 }

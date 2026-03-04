@@ -22,12 +22,15 @@ function Header() {
             <p className="bio">
               Data Storyteller • Data Analysis & Research • Education
             </p>
-            <div className="resume-link-section">
-              <a href={resumePDF} download className="resume-button">
-                Download Resume
-              </a>
-            </div>
             <div className="social-links">
+              <a href={resumePDF} download className="resume-link" title="Download Resume">
+                <svg className="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10z"/>
+                  <polyline points="14 2 14 10 22 10"/>
+                  <line x1="12" y1="19" x2="12" y2="5"/>
+                  <line x1="9" y1="8" x2="15" y2="8"/>
+                </svg>
+              </a>
               <a href="mailto:sunnyxu0628@outlook.com" title="Email">
                 <svg className="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
