@@ -10,17 +10,17 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f9f9f9;
-  color: #333;
+  background-color: #FAF8F6;
+  color: #2C2C2C;
   line-height: 1.6;
 }
 
 a {
-  color: #0066cc;
+  color: #C87B63;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #0052a3;
+  color: #A65D4A;
 }

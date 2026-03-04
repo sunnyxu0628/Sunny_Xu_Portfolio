@@ -60,41 +60,49 @@ function Certifications() {
   return (
     <div className="section">
       <h2>Certifications</h2>
-      <div className="certifications-grid">
-        {certifications.map((cert) => (
-          <div key={cert.id} className="cert-card">
-            <div className="cert-info">
-              <h3>
-                {cert.link ? (
+      <p className="section-intro">Scroll horizontally to view all certificates</p>
+      <div className="certifications-gallery">
+        <div className="certifications-scroll">
+          {certifications.map((cert) => (
+            <div key={cert.id} className="cert-viewer-card">
+              <div className="cert-header">
+                <h3>
+                  {cert.link ? (
+                    <a 
+                      href={cert.link} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="cert-title-link"
+                    >
+                      {cert.title}
+                    </a>
+                  ) : (
+                    cert.title
+                  )}
+                </h3>
+                <p className="issuer">{cert.issuer}</p>
+                <p className="date">{cert.date}</p>
+              </div>
+              {cert.attachment && (
+                <div className="cert-viewer">
+                  <iframe
+                    src={cert.attachment}
+                    title={cert.title}
+                    className="cert-iframe"
+                  />
                   <a 
-                    href={cert.link} 
+                    href={cert.attachment} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="cert-title-link"
+                    className="cert-fullscreen-link"
                   >
-                    {cert.title}
+                    Open in Full Screen →
                   </a>
-                ) : (
-                  cert.title
-                )}
-              </h3>
-              <p className="issuer">{cert.issuer}</p>
-              <p className="date">{cert.date}</p>
-            </div>
-            <div className="cert-actions">
-              {cert.attachment && (
-                <a 
-                  href={cert.attachment} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="cert-link"
-                >
-                  View Certificate
-                </a>
+                </div>
               )}
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   )

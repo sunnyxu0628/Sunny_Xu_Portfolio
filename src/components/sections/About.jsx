@@ -1,12 +1,31 @@
 import './SectionStyles.css'
 
 function About() {
+  const skills = [
+    {
+      title: 'Data Visualization',
+      detail: 'Power BI, Tableau',
+    },
+    {
+      title: 'Programming & Data Tools',
+      detail: 'Stata, R, Python, SQL',
+    },
+    {
+      title: 'GIS & Spatial Analysis',
+      detail: 'QGIS, ArcGIS',
+    },
+    {
+      title: 'Career Technical Education (CTE) Research',
+      detail: 'Program outcomes, labor market analysis',
+    },
+  ]
+
   return (
     <div className="section">
       <h2>About Me</h2>
       <div className="section-content">
         <p>
-          I am a <span className="highlight">data‑driven</span> professional specializing in workforce and Career Technical Education (CTE) analytics, with <span className="highlight">5 years</span> of experience in data analysis. I hold a <span className="highlight">Master of Public Policy</span> from UC San Diego and earned a <span className="highlight">B.S. in Applied Mathematics</span> and a <span className="highlight">B.A. in Economics–Public Policy</span>, which provide a strong quantitative and policy foundation.
+          I am a data‑driven professional specializing in workforce and Career Technical Education (CTE) analytics, with 5 years of experience in data analysis. I hold a Master of Public Policy from UC San Diego and earned a B.S. in Applied Mathematics and a B.A. in Economics–Public Policy, which provide a strong quantitative and policy foundation.
         </p>
 
         <p>
@@ -14,10 +33,12 @@ function About() {
         </p>
         <h3>Key Skills</h3>
         <ul className="skills-list">
-          <li>Data Visualization (Power BI)</li>
-          <li>Programming Tools (Stata, R, Python, SQL)</li>
-          <li>GIS &amp; Spatial Data Analysis (QGIS, ArcGIS)</li>
-          <li>Labor Market &amp; Career Technical Education (CTE) Research</li>
+          {skills.map((skill) => (
+            <li key={skill.title}>
+              <span className="skill-title">{skill.title}</span>
+              <span className="skill-detail">{skill.detail}</span>
+            </li>
+          ))}
         </ul>
       </div>
     </div>
