@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import Header from './components/Header'
 import Navigation from './components/Navigation'
+import Overview from './components/sections/Overview'
 import About from './components/sections/About'
 import WorkHistory from './components/sections/WorkHistory'
 import Education from './components/sections/Education'
@@ -10,10 +11,12 @@ import Projects from './components/sections/Projects'
 import Conferences from './components/sections/Conferences'
 
 function App() {
-  const [activeTab, setActiveTab] = useState('about')
+  const [activeTab, setActiveTab] = useState('overview')
 
   const renderContent = () => {
     switch (activeTab) {
+      case 'overview':
+        return <Overview />
       case 'about':
         return <About />
       case 'work':

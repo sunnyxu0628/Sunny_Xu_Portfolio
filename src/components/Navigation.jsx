@@ -2,6 +2,7 @@ import './Navigation.css'
 
 function Navigation({ activeTab, setActiveTab }) {
   const tabs = [
+    { id: 'overview', label: 'Overview' },
     { id: 'about', label: 'About' },
     { id: 'work', label: 'Work Experience' },
     { id: 'education', label: 'Education' },
