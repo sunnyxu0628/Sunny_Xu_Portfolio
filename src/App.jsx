@@ -3,7 +3,6 @@ import './App.css'
 import Header from './components/Header'
 import Navigation from './components/Navigation'
 import Overview from './components/sections/Overview'
-import About from './components/sections/About'
 import WorkHistory from './components/sections/WorkHistory'
 import Education from './components/sections/Education'
 import Certifications from './components/sections/Certifications'
@@ -17,8 +16,6 @@ function App() {
     switch (activeTab) {
       case 'overview':
         return <Overview />
-      case 'about':
-        return <About />
       case 'work':
         return <WorkHistory />
       case 'education':
@@ -30,7 +27,7 @@ function App() {
       case 'conferences':
         return <Conferences />
       default:
-        return <About />
+        return <Overview />
     }
   }
 
