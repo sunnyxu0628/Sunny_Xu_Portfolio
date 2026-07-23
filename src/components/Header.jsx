@@ -1,5 +1,4 @@
 import './Header.css'
-import resumePDF from '../assets/Sunny_Xu_Resume.pdf'
 
 function Header() {
   return (
@@ -23,7 +22,13 @@ function Header() {
               Data Storyteller • Data Analysis & Research • Education
             </p>
             <div className="social-links">
-              <a href={resumePDF} download className="resume-link" title="Download Resume">
+              <a
+                href="/Sunny_Xu_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="resume-link"
+                title="Open Resume"
+              >
                 <svg className="resume-doc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M14 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z" />
                   <polyline points="14 2 14 8 20 8" />
