@@ -2,19 +2,6 @@
 
 A modern, responsive personal portfolio website built with React and Vite.
 
-## Features
-
-- ✨ Clean and professional design
-- 📱 Fully responsive and mobile-friendly
-- 🎨 Customizable sections including:
-  - About
-  - Work History
-  - Education
-  - Certifications
-  - Featured Projects
-  - Conferences & Presentations
-- ⚡ Fast performance with Vite
-- 🎯 Easy to customize and extend
 
 ## Getting Started
 
@@ -104,10 +91,6 @@ vercel
 - Vite
 - CSS3 (with Flexbox and Grid)
 - JavaScript ES6+
-
-## License
-
-This project is open source and available under the MIT License.
 
 ## Support
 
