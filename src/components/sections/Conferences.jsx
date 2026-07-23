@@ -1,6 +1,7 @@
 import './SectionStyles.css'
 import perkinsSlides from '../../assets/Conferences/Perkins Promising Practices.pdf'
 import wblSlides from '../../assets/Conferences/Work-Based Learning Improves Student Outcomes- Replicating Our Methodology.pdf'
+import clnaSlides from '../../assets/Conferences/CCCAOE2026_CLNA.pdf'
 
 function Conferences() {
   const presentations = [
@@ -27,6 +28,17 @@ function Conferences() {
       collaborators:
         'With Amertah Perman (Dean, Career Education & Workforce Development, SDCCD)',
       slides: wblSlides,
+    },
+    {
+      id: 3,
+      title: 'Comprehensive Local Needs Assessment (CLNA)',
+      event: 'CCCAOE Conference',
+      year: 'April 2026',
+      eventLink: 'https://cccaoe.org/',
+      description:
+        'Presented on CLNA practices and data-informed approaches for evaluating Career Technical Education program needs and regional workforce alignment.',
+      collaborators: 'Presented by Qingai (Sunny) Xu',
+      slides: clnaSlides,
     },
   ]
 
