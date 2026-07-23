@@ -64,7 +64,6 @@ The build output will be in the `dist` folder.
 
 ## Deployment
 
-You can deploy your portfolio to various platforms:
 
 ### GitHub Pages
 ```bash
@@ -74,16 +73,6 @@ git commit -m "Deploy"
 git subtree push --prefix dist origin gh-pages
 ```
 
-### Vercel
-```bash
-npm install -g vercel
-vercel
-```
-
-### Netlify
-1. Connect your repository to Netlify
-2. Set build command: `npm run build`
-3. Set publish directory: `dist`
 
 ## Technologies Used
 
