@@ -25,11 +25,11 @@ function About() {
       <h2>About Me</h2>
       <div className="section-content">
         <p>
-          I am a data‑driven professional specializing in workforce and Career Technical Education (CTE) analytics, with 5 years of experience in data analysis. I hold a Master of Public Policy from UC San Diego and earned a B.S. in Applied Mathematics and a B.A. in Economics–Public Policy, which provide a strong quantitative and policy foundation.
+          Researcher and data analyst with 4+ years of experience leading quantitative and qualitative research on career and technical education (CTE) and workforce development.
         </p>
 
         <p>
-          I integrate education and labor market datasets to build analytical tools that inform strategy, improve reporting systems, and support evidence‑based decision‑making. My work focuses on transforming complex data into clear, actionable insights tailored to diverse audiences.
+          Skilled in designing data collection and analysis strategies, managing cross-functional research teams and projects, and translating findings into clear, actionable recommendations for institutional leadership and non-technical audiences. Proficient in Python, R, SQL, Stata, and Power BI.
         </p>
         <h3>Key Skills</h3>
         <ul className="skills-list">
