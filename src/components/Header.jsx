@@ -1,4 +1,7 @@
 import './Header.css'
+import profileImage from '../assets/profile.jpg'
+
+const resumeURL = `${import.meta.env.BASE_URL}Sunny_Xu_Resume.pdf`
 
 function Header() {
   return (
@@ -10,7 +13,7 @@ function Header() {
               Replace the src with your actual profile photo. You can put an image
               in `src/assets/profile.jpg` or use an external URL. */}
             <img 
-              src="/src/assets/profile.jpg" 
+              src={profileImage} 
               alt="Profile" 
               className="profile-image"
             />
@@ -23,7 +26,7 @@ function Header() {
             </p>
             <div className="social-links">
               <a
-                href="/Sunny_Xu_Resume.pdf"
+                href={resumeURL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="resume-link"
