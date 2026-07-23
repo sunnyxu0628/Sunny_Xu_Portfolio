@@ -37,7 +37,7 @@ function Conferences() {
       eventLink: 'https://cccaoe.org/',
       description:
         'Presented on CLNA practices and data-informed approaches for evaluating Career Technical Education program needs and regional workforce alignment.',
-      collaborators: 'Presented by Qingai (Sunny) Xu',
+      collaborators: 'With Eddie Matthews (Program Manager, San Diego CCD).',
       slides: clnaSlides,
     },
   ]
