@@ -1,5 +1,5 @@
 import './Header.css'
-import resumePDF from '../assets/SunnyXu_Resume.pdf'
+import resumePDF from '../assets/Sunny_Xu_Resume.pdf'
 
 function Header() {
   return (
